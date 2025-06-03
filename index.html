@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños, Mi Amor!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <h1>¡Feliz Cumpleaños, Mi Amor!</h1>
+
+  <div class="container">
+    <div class="image-box">
+      <img src="imagenes/fondo2.jpeg" alt="portada">
+    </div>
+
+    <p class="hint">Pista: Fecha en la que naciste mi amor bonito</p>
+
+    <!-- Recuadro que contiene los corazones -->
+    <div class="password-display">
+      <div class="password-box" id="password"></div>
+    </div>
+
+    <div class="keypad">
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="clearPass()">⌫</button>
+      <button onclick="press('0')">0</button>
+      <button onclick="checkPassword()">#</button>
+    </div>
+
+    <button class="enter-button" onclick="checkPassword()">Entrar</button>
+  </div>
+
+  <script>
+    let password = '';
+    const passwordBox = document.getElementById('password');
+    const correctPassword = "040600";
+
+    function press(num) {
+      if (password.length < 6) {
+        password += num;
+        passwordBox.textContent = '❤️'.repeat(password.length);
+      }
+    }
+
+    function clearPass() {
+      password = '';
+      passwordBox.textContent = '';
+    }
+
+    function checkPassword() {
+      if (password === correctPassword) {
+        window.location.href = "amor.html";
+      } else {
+        alert("Oops... intenta de nuevo mi amor 😢");
+        clearPass();
+      }
+    }
+  </script>
+
+</body>
+</html>

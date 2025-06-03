@@ -1,0 +1,126 @@
+/* Estilos generales */
+body {
+  background: #0c0321;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  color: #ff4f82;
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  text-shadow: 0 0 8px #ff4f82;
+  margin-bottom: 20px;
+}
+
+.container {
+  background: #1d1230;
+  border-radius: 20px;
+  padding: 20px;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(255, 79, 130, 0.4);
+  max-width: 100%;
+  width: 340px;
+}
+
+/* Imagen */
+.image-box img {
+  width: 100%;
+  max-width: 160px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* Pista */
+.hint {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #f8b5c3;
+  margin-bottom: 15px;
+}
+
+/* Recuadro de corazones */
+.password-display {
+  border: 2px solid #ff4f82;
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto 15px auto;
+  background-color: #2a183a;
+  box-shadow: 0 0 10px rgba(255, 79, 130, 0.4);
+}
+
+.password-box {
+  font-size: 1.5 em;
+  letter-spacing: 10px;
+  color: #ff4f82;
+  min-height: 40px;
+}
+
+/* Teclado */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.keypad button {
+  font-size: 1.3em;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ff4f82;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.keypad button:hover {
+  background: #ff6b9e;
+}
+
+/* Botón de entrar */
+.enter-button {
+  background: linear-gradient(to right, #d66afd, #7f6bff);
+  color: white;
+  padding: 12px;
+  font-size: 1em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 80%;
+  max-width: 250px;
+  margin-top: 10px;
+}
+
+.enter-button:hover {
+  background: linear-gradient(to right, #b654fd, #5a4bff);
+}
+
+/* Responsive: celulares pequeños */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .password-box {
+    font-size: 2em;
+    letter-spacing: 8px;
+  }
+
+  .enter-button {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  .keypad button {
+    padding: 10px;
+    font-size: 1.2em;
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Ti ❤️</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="amor.css" />
+  <style>
+    #cartaTexto {
+      white-space: pre-line;
+      font-size: 1em;
+      line-height: 1.6;
+      min-height: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón de música -->
+  <button id="musicBtn">🎵</button>
+  <audio id="music" src="teamo.mp3" loop></audio>
+
+  <!-- Título principal -->
+  <h1>¡Que viva la cumpleañera mas hermosa!❤️</h1>
+
+  <!-- Mensaje principal -->
+  <div class="mensaje">
+    Me gusta que siempre sonrías y más aún en un día tan especial como este, recuerda que tu sonrisa ilumina mi mundo 🥰
+  </div>
+
+  <!-- Frase especial -->
+  <div class="frase">
+    "Tú eres mi camino y siempre serás mi camino." 💕
+  </div>
+
+  <!-- Carrusel de imágenes -->
+  <div class="carrusel">
+    <button onclick="cambiarImagen(-1)">&#10094;</button>
+    <img id="imagenCarrusel" src="imagenes/recuerdo 1.jpg" alt="Recuerdo" />
+    <button onclick="cambiarImagen(1)">&#10095;</button>
+  </div>
+
+  <!-- Botón de carta -->
+  <button class="corazon-btn" onclick="abrirCarta()">💌 Ver mi carta para ti</button>
+
+  <!-- Modal de carta -->
+  <div id="cartaModal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarCarta()">&times;</span>
+      <h2>Para el amor de mi vida 💕:</h2>
+      <p id="cartaTexto"></p>
+      <p class="firma">Con todo mi amor, <br />Arielito.</p>
+    </div>
+  </div>
+
+  <!-- Sección de recuerdos -->
+  <div class="recuerdos">
+    <h2>Recuerdos inolvidables</h2>
+    <div class="recuerdo">
+      <h3>Nuestro Primer viaje (Salinas)</h3>
+      <div class="fecha">Sábado 5 de Abril de 2025</div>
+      <p>Gracias a Dios pudimos tener nuestro primer viaje juntos 🥰, el primero de muchos que vendrán mi amor 💟. La pasé increíble contigo, cada momento fue especial ✨. Ya quiero que planemos el próximo destino 😍🌍.</p>
+    </div>
+    <div class="recuerdo">
+      <h3>Nuestra visita a Mr. Joy</h3>
+      <div class="fecha">Jueves 13 de Febrero 2025</div>
+      <p>¿Y cómo olvidar nuestro primer 14 de febrero juntos? Bueno..fue el 13 😅, pero bueno la intención es lo que cuenta. 🤭 Disfruté muchísimo esa salida contigo, mi amor 💑, fue un día inolvidable ✨💞. Definitivamente, hay que repetirlo muy pronto 😍🌹.</p>
+    </div>
+    <div class="recuerdo">
+      <h3>Nuestras salidas improvisadas</h3>
+      <div class="fecha">Siempre que se puede jeje</div>
+      <p>Definitivamente, contigo confirmé que no es el lugar, sino la persona 😊. Cualquier plan que te incluya a ti siempre será el mejor, mi amor 💑. Te amo demasiado 🧡 y, si Dios lo permite 🙏, seguiremos descubriendo más huequitas de comida juntos 🍔🍟🍜. Porque vida hay una... ¡y tallas muchas! 😂👀</p>
+    </div>
+  </div>
+
+  <!-- Sección extra -->
+  <div class="seccion-extra">
+    <div class="tarjeta">
+      <h2>Mi amor por ti</h2>
+      <div class="barra-amor"></div>
+      <p>Crece cada día más, como esta barrita sin fin 💖</p>
+    </div>
+  </div>
+
+  <div class="seccion-extra">
+    <div class="tarjeta">
+      <h2>Nuestro Futuro</h2>
+      <p>Espero que podamos celebrar muchos cumpleaños más juntos 🎉❤️, llenos de amor y momentos felices 😊. Que tengas muchos años más de vida y salud porque te lo mereces mucho 🍀✨. Aunque aún no estamos casados 💍, sé que pronto llegará ese momento y construiremos un futuro increíble juntos 👫🌟. 
+        Me muero de ganas de seguir viviendo esta aventura contigo y crecer a tu lado cada día 💖.</p>
+    </div>
+    <div class="firma-extra">Con todo mi amor 💖, de este loco enamorado que te ama hoy, mañana y por siempre ✨❤️.</div>
+  </div>
+
+  <!-- Corazones flotantes -->
+  <div class="corazones-container"></div>
+
+  <!-- Scripts -->
+  <script>
+    const imagenes = [
+      "imagenes/recuerdo 1.jpg",
+      "imagenes/recuerdo 2.jpg",
+      "imagenes/recuerdo 3.jpg"
+    ];
+    let indice = 0;
+
+    function cambiarImagen(direccion) {
+      indice = (indice + direccion + imagenes.length) % imagenes.length;
+      document.getElementById('imagenCarrusel').src = imagenes[indice];
+    }
+
+    function abrirCarta() {
+      document.getElementById("cartaModal").style.display = "block";
+      escribirCarta();
+    }
+
+    function cerrarCarta() {
+      document.getElementById("cartaModal").style.display = "none";
+    }
+
+    const musicBtn = document.getElementById("musicBtn");
+    const music = document.getElementById("music");
+    let playing = false;
+
+    musicBtn.onclick = () => {
+      playing = !playing;
+      playing ? music.play() : music.pause();
+      musicBtn.textContent = playing ? "⏸️" : "🎵";
+    };
+
+    const container = document.querySelector('.corazones-container');
+    function crearCorazon() {
+      const corazon = document.createElement('span');
+      corazon.innerHTML = '❤️';
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.fontSize = (16 + Math.random() * 20) + "px";
+      corazon.style.animationDuration = (5 + Math.random() * 5) + "s";
+      corazon.className = 'corazon-flotante';
+      container.appendChild(corazon);
+      setTimeout(() => corazon.remove(), 10000);
+    }
+    setInterval(crearCorazon, 400);
+
+    // Máquina de escribir por palabras
+    const textoCarta = `Quisiera comenzar agradeciendo a Dios 🙏 por tu vida, porque gracias a Él tuve la dicha de conocer a una mujer tan maravillosa como tú 💖. Sin duda, eres lo más hermoso que me ha pasado 🌟.
+Eres la persona con la que quiero compartir cada día del resto de mi vida 👩‍❤️‍👨, aquella que conoce cada parte de mí y aun así decide quedarse 💕. Y hoy, esa personita tan especial está cumpliendo años 🎉🎂: una mujer trabajadora 💪, sencilla 🌸, con un corazón inmenso ❤️; aquella que me enseñó que no hay adversidad que pueda detenerme 🌈, mi apoyo incondicional 🤝, quien me cuida 🥰, me consiente y siempre se preocupa por mí 😘.
+Eres mi niña 👧, mi princesa 👑, mi amor bello 💞, el amor de mi vida 💘. Una mujer a la que admiro profundamente y a quien estoy dispuesto a amar por siempre 🔒.
+Deseo de todo corazón que en este día tan especial la pases de maravilla 🥳. Te amo con todo mi ser ❤️‍🔥 y te deseo el más feliz de los cumpleaños 🎁🎊. Nunca olvides lo maravillosa que eres 🌺 y, si algún día llegas a dudarlo, estaré aquí para recordártelo todos los días 🗓️💌.
+Nota: Muy pronto celebraremos nuestros cumpleaños juntitos 🎈, sé que así será. Te amo, Shirley Jamileth Loor García 💖. Recuerda que nunca estarás sola: Dios siempre estará contigo, y yo, a tu lado, hasta que la muerte nos separe❤️. Te amo, te amo, te amo. 💗💗💗 y que viva la cumpleañeraaaa🥳`;
+
+    function escribirCarta() {
+      const palabras = textoCarta.split(' ');
+      const contenedor = document.getElementById("cartaTexto");
+      contenedor.innerHTML = "";
+      let i = 0;
+
+      const intervalo = setInterval(() => {
+        if (i < palabras.length) {
+          contenedor.innerHTML += palabras[i] + ' ';
+          i++;
+        } else {
+          clearInterval(intervalo);
+        }
+      }, 150);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, rgba(15,12,41,0.8), rgba(36,36,62,0.8)), url('imagenes/portada.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Encabezado principal */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  color: #ff4d6d;
+  margin-top: 1.5em;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Mensaje */
+.mensaje {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1.5em auto;
+  width: 90%;
+  max-width: 500px;
+  font-size: 1.1em;
+}
+
+/* Frase especial */
+.frase {
+  font-style: italic;
+  margin: 1em auto;
+  width: 90%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+/* Carrusel */
+.carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+}
+.carrusel img {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s ease;
+}
+.carrusel button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #ff4d6d;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+/* Botón de carta con animación de corazón latiendo */
+.corazon-btn {
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #ff4d6d;
+  animation: latido 1s infinite;
+  margin: 1.5em 0;
+  cursor: pointer;
+}
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Modal de carta */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-contenido {
+  background: #fff;
+  color: #000;
+  margin: 10% auto;
+  padding: 2em;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 77, 109, 0.5);
+}
+.modal-contenido h2 {
+  color: #c0392b;
+  margin-bottom: 1em;
+}
+.modal-contenido .firma {
+  margin-top: 2em;
+  font-style: italic;
+  color: #e74c3c;
+}
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #e74c3c;
+}
+
+/* Sección de recuerdos */
+.recuerdos {
+  margin: 3em auto;
+  width: 90%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2em;
+  border-radius: 15px;
+}
+.recuerdos h2 {
+  color: #ff4d6d;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1em;
+}
+.recuerdo {
+  margin-bottom: 1.5em;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  border-radius: 10px;
+}
+.recuerdo h3 {
+  color: #ff4d6d;
+  margin-bottom: 0.3em;
+}
+.recuerdo .fecha {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+/* Botón de música */
+#musicBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #fff;
+  cursor: pointer;
+  z-index: 20;
+  transition: transform 0.3s ease;
+}
+#musicBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Sección extra */
+.seccion-extra {
+  margin: 3em auto;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+.tarjeta {
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 1.5em;
+  border-radius: 15px;
+  margin-bottom: 2em;
+  box-shadow: 0 0 15px rgba(255, 77, 109, 0.15);
+}
+.tarjeta h2 {
+  color: #ff4d6d;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5em;
+}
+.barra-amor {
+  width: 80%;
+  margin: 1em auto;
+  height: 15px;
+  background: linear-gradient(to right, #ff4d6d, #ff6b81);
+  border-radius: 10px;
+}
+.firma-extra {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4em;
+  color: #ff4d6d;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+/* Corazones flotantes con animación */
+.corazones-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.corazones-container span {
+  position: absolute;
+  color: #ff4d6d;
+  font-size: 20px;
+  animation: flotar 8s linear infinite;
+  opacity: 0.6;
+}
+@keyframes flotar {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Responsive ajustes */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+  .mensaje, .frase, .modal-contenido, .recuerdos, .seccion-extra {
+    width: 90%;
+  }
+  .carrusel img {
+    width: 90%;
+  }
+}
